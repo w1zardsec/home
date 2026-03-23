@@ -53,7 +53,7 @@ function build_prompt() {
     local git_info=$(git_prompt_info)
     local context=$(dynamic_context)
     
-    local prompt="[%F{magenta}🧙‍♂️%f] [%F{cyan}%n%f@%F{yellow}%m%f] >> %F{green}%~%f"
+    local prompt="[%F{magenta}🦈%f] [%F{cyan}%n%f@%F{yellow}%m%f] >> %F{green}%~%f"
     
     if [[ -n $git_info ]]; then
         prompt+=" $git_info"
