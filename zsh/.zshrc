@@ -129,8 +129,24 @@ fi
 export PATH=$PATH:$HOME"/.local/bin/":$HOME"/go/bin"
 export PATH=$PATH:$HOME"/.opencode/bin"
 
-alias cat="bat --style=plain"
+alias cat="bat --style=plain --paging=never"
 alias v="nvim"
 alias vim="nvim"
 alias ls="eza"
 eval "$(zoxide init zsh)"
+
+# bun completions
+[ -s "/home/user/.bun/_bun" ] && source "/home/user/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# Claude Code PATH
+export PATH="$HOME/.claude/local/bin:$HOME/.local/bin:$HOME/.bun/bin:$PATH"
+export PATH="$PATH:$HOME/Android/Sdk/emulator"
+alias grep="rg"
+[ -f ~/.spawnrc ] && source ~/.spawnrc
