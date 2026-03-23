@@ -1,0 +1,23 @@
+#!/bin/sh
+
+export DISPLAY=${DISPLAY:-:0}
+
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+[ -f ~/.cache/wal/colors.Xresources ] && xrdb -merge ~/.cache/wal/colors.Xresources
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+
+[ -f ~/.cache/wal/wal ] && feh --bg-scale "$(cat ~/.cache/wal/wal)" &
+
+clipmenud &
+dunst &
+picom --config ~/.config/picom/picom.conf -b &
+
+while xsetroot -name "$(cat /sys/class/power_supply/BAT0/capacity)%  $(date '+%I:%M %p  %d %B %Y')"
+do
+    sleep 1
+done &
+
+exec vxwm
