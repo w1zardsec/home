@@ -133,9 +133,11 @@ static const char *clipmenucmd[] = { "clipmenu",  "-fn", dmenufont, "-nb", normb
 static const char *termcmd[]      = { "st", NULL };
 static const char *flameshotcmd[] = { "flameshot", "gui", NULL };
 static const char *clipdelcmd[]   = { "sh", "-c", "clipdel -d .", NULL };
+static const char *lockcmd[] = { "slock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+  { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
   { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
