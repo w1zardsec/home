@@ -49,6 +49,10 @@ static const int vertpad = 5;       /* vertical padding of bar */
 static const int sidepad = 5;       /* horizontal padding of bar */
 #endif
 
+#if BAR_WIDTH
+static const float bar_width = 0.7; /* factor of bar width [0.05..1.0], 1.0 = full width */
+#endif
+
 /* tagging */
 static const char *tags[] = { "0x01", "0x02", "0x03", "0x04", "0x05" };
 
@@ -85,7 +89,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	// { "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
