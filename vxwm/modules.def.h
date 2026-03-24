@@ -58,6 +58,7 @@ Even though this sounds complex, it is actually pretty lightweight ~250 l.o.c, a
 #define ALT_CENTER_OF_BAR_COLOR 0 // changes center of bar color to a dark color.
 #define BAR_HEIGHT 0 // Support for changing bar height.
 #define BAR_PADDING 0 // Support for changing the bar padding.
+#define BAR_WIDTH 1 // Support for changing bar width (e.g. 70% of monitor width, centered).
 #define OCCUPIED_TAGS_DECORATION 0 // This provides the ability to use an alternative text for tags which contain at least one window aka occupied tags.
 
 
@@ -75,7 +76,7 @@ Even though this sounds complex, it is actually pretty lightweight ~250 l.o.c, a
 
 
 /* Misc */
-#define AUTOSTART 0 // Support for vxwm being able to start apps defined in config.h in startup.
+#define AUTOSTART 1 // Support for vxwm being able to start apps defined in config.h in startup.
 #define FULLSCREEN 0 // Support for toggling fullscreen.
 #define MOVE_IN_TILED 0 // Support for moving windows in tiled mode.
 #define EWMH_TAGS 0 // Support for EWMH tags, recommended if you want to use external bars with less pain
